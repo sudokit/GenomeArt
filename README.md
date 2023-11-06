@@ -6,8 +6,17 @@ example(vaccinia virus genome):
 ![vaccinia virus](vaccina_genome.png)
 (you can see kind of some vertical lines)
 
-TODO: Will maybe try adding multithreading, because as we all know, multithreading makes code 100x better
+- [ ] TODO: Will maybe try adding multithreading, because as we all know, multithreading makes code 100x better
+- [ ] TODO: Parse the genome? files better. The current way is shit
+- [ ] TODO: Make a better image viewer? Maybe the ability to zoom and pan around (plotting it for now. makes the image a bit blurry but oh well ```-\_(-_-)_/-```)
+- [ ] TODO: Validate the genome (never trust the user)
+- [ ] TODO: Add custom menu options to save the image
+- [ ] TODO: Add a progress bar
+
+# RUNNING:
+first, you need the requirements:
+```python -m pip install numpy dearpygui icecream Pillow```
+then you just run the mmain.py (not main.py bc i had another main.py that i tested stuff on) and it will pop up a gui:
+![gui](gui.png)
 <br>
-TODO: Parse the genome? files better. The current way is shit
-<br>
-TODO: Make a better image viewer? Maybe the ability to zoom and pan around (plotting it for now. makes the image a bit blurry but oh well ```-\_(-_-)_/-```)
+and then you paste a path to a .txt containing the genome (i dont yet do any "validation" so i trust the user) and press generate. then you will have to wait a bit depending on the size of the genome and eventually it will pop-up an image plot. 
