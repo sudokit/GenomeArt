@@ -5,4 +5,4 @@ TODO: Will maybe try adding multithreading, because as we all know, multithreadi
 <br>
 TODO: Parse the genome? files better. The current way is shit
 <br>
-TODO: Make a better image viewer? Maybe the ability to zoom and pan around (plotting it for now. makes the image a bit blurry but oh well -\_(-_-)_/-)
+TODO: Make a better image viewer? Maybe the ability to zoom and pan around (plotting it for now. makes the image a bit blurry but oh well ```-\_(-_-)_/-```)
