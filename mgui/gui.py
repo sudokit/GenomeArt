@@ -32,11 +32,6 @@ def handle_img_gen() -> None:
     dna = utils.parse_dna(filepath)
     image_array = utils.populate_numpy_array(dna, rgba=True)
     width, height, _ = image_array.shape
-    image = Image.fromarray(utils.populate_numpy_array(dna, rgba=False))
-    # image.putalpha(255)
-    # dpg_image = np.frombuffer(image.tobytes(), dtype=np.uint8) / 255.0
-    image.save("koli_genome.png")
-    # width, height, channels, data = dpg.load_image("tmp.png")
     with dpg.texture_registry(show=False):
         dpg.add_static_texture(width=width, height=height, default_value=image_array/255.0, tag="tmp")
 
@@ -55,7 +50,6 @@ def create_widgets() -> None:
         dpg.add_file_extension(".txt", color=(0, 255, 0, 255), custom_text="[Text]")
 
     with dpg.window(label="Cool", width=800, height=600, no_move=True, no_resize=True, tag="main"):
-        # group = dpg.group(horizontal=True)
         dpg.add_button(label="Select file", callback=lambda: dpg.show_item("file_pick"))
         dpg.add_same_line()
         dpg.add_input_text(default_value="", label="<path", tag="filepath")

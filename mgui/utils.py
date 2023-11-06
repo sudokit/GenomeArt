@@ -16,6 +16,7 @@ def dna_to_color(dna: str) -> tuple[int, int, int]:
     }
     return dnaMatch.get(dna, None)
 
+# from: https://github.com/hoffstadt/DearPyGui/discussions/1002 (thanks!)
 def show_info(title, message, selection_callback):
 
     # guarantee these commands happen in the same frame
@@ -33,13 +34,10 @@ def show_info(title, message, selection_callback):
     width = dpg.get_item_width(modal_id)
     height = dpg.get_item_height(modal_id)
     dpg.set_item_pos(modal_id, [viewport_width // 2 - width // 2, viewport_height // 2 - height // 2])
-    
+
 def populate_numpy_array(dna: str, rgba: bool = False) -> np.ndarray:
-    # nImage = Image.new('RGB', (math.ceil(math.sqrt(len(self.__dna))), math.ceil(math.sqrt(len(self.__dna)))))
     dna_len = dna.count("A") + dna.count("T") + dna.count("G") + dna.count("C")
     nImage = np.zeros((math.ceil(math.sqrt(dna_len)), math.ceil(math.sqrt(dna_len)), 3 if not rgba else 4), dtype=np.uint8)
-    
-    # pic = Image.open(f"{self.__filename}.{self.__extension}")
 
     width, height, _ = nImage.shape
     print(nImage.shape)
@@ -52,7 +50,6 @@ def populate_numpy_array(dna: str, rgba: bool = False) -> np.ndarray:
                 current_color = dna_to_color(dna[iterations])
                 if current_color == None:
                     continue
-                # nImage.putpixel((x, y), current_color)
                 nImage[x, y] = list(current_color) if not rgba else list(current_color) + [255]
                 iterations += 1
                 if iterations == len(dna):
@@ -63,7 +60,6 @@ def populate_numpy_array(dna: str, rgba: bool = False) -> np.ndarray:
         ic(f"dna length: {dna_len}")
         ic(f"iterations done: {iterations}")
         ic("As: {} Ts: {} Gs: {} Cs: {}".format(dna.count("A"), dna.count("T"), dna.count("G"), dna.count("C")))
-        # nImage.save(f"{self.__filename}.{self.__extension}", format='png')  
         print("Done visualizing")
         return nImage
 
