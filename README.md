@@ -3,7 +3,7 @@ I was interested about seeing how genomes looked. So decided to make it into an 
 
 example(vaccinia virus genome):
 <br>
-![vaccinia virus](vaccina_genome.png)
+![vaccinia virus](vaccinia_genome.png)
 (you can see kind of some vertical lines)
 
 - [ ] TODO: Will maybe try adding multithreading, because as we all know, multithreading makes code 100x better
