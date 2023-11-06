@@ -4,7 +4,7 @@ I was interested about seeing how genomes looked. So decided to make it into an 
 example(vaccinia virus genome):
 <br>
 ![vaccinia virus](vaccinia_genome.png)
-(you can see kind of some vertical lines)
+(you can kind of see some vertical lines and patterns. uu now i wonder if you could somehow train a neural network to detect something from a persons genome turned into an image)
 
 - [ ] TODO: Will maybe try adding multithreading, because as we all know, multithreading makes code 100x better
 - [ ] TODO: Parse the genome? files better. The current way is shit
